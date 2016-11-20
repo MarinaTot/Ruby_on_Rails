@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<p>
+<table class="table table-bordered">
+  <strong>Ime:</strong>
+  <%= @idea.name %>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+  <%= @idea.description %>
+</p>
+
+<p>
+  <strong>Slika:</strong>
+  	<div class="img-circle">
+    	<%= image_tag(@idea.picture_url, width: 300) if @idea.picture.present? %>
+   </div>
+</p>
+</table>
+
+<button type="button" class="btn btn-warning"><%= link_to 'Izmeni', edit_idea_path(@idea) %></button>
+
+<button type="button" class="btn btn-warning"><%= link_to 'Nazad', ideas_path %></button>
